@@ -1,0 +1,135 @@
+/*#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+*/
+
+.home {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f3f3f3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  &__logo img {
+    height: 50px; /* Taille du logo */
+  }
+
+  &__links {
+    display: flex;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 1.2em;
+      font-weight: bold;
+
+      &:hover {
+        color: #646cff;
+      }
+    }
+  }
+
+  &__banner {
+    width: 100%;
+    margin: 20px auto;
+    padding: 40px;
+    background: url("https://via.placeholder.com/1200x400") center/cover no-repeat; /* Image en ligne */
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    position: relative;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background: #f3f3f3;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffcccc; /* Rouge pâle */
+    color: white;
+    height: 150px;
+    border-radius: 10px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+
+
+  }
+}
+
+footer {
+  padding: 20px;
+  background-color: #000000;
+  text-align: center;
+  margin-top: 40px;
+
+  .footer__logo {
+    margin-bottom: 10px;
+  }
+
+  .footer__copyright {
+    font-size: 14px;
+    color: #ffffff;
+  }
+}

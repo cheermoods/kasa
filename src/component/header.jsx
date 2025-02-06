@@ -1,15 +1,18 @@
+import { Link } from "react-router";
 
 const Header = () => {
   return (
     <header>
-      <div>
-        <img src="./images/logo.png" alt="Logo" />
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#home">Accueil</a></li>
-          <li><a href="#about">À propos</a></li>
-        </ul>
+      <nav className="home__menu">
+        <div className="home__logo">
+          <img src="./images/logo.png" alt="Logo" />
+        </div>
+
+        {/* Menu */}
+        <div className="home__links">
+          <Link to="/">Accueil</Link>
+          <Link to="/about">À propos</Link>
+        </div>
       </nav>
     </header>
   );

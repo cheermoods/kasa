@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Header from './component/header'
+import { Routes, Route } from 'react-router-dom'; // import nommé
+import './App.scss'
+
+// 
+import Header from './component/header';
+import Footer from './component/footer';
+import Home from './pages/accueil';  // La page d'accueil
+import Faq from './pages/faq';  // La page FAQ
+import Logement from './pages/logement';  // La page Logement
+import NotFound from './pages/404'; // La page 404
 
 function App() {
-  const [count, setCount] = useState(0)
+  //
   // comportement 
   return (
     <>
       <Header />
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <Routes>
+          <Route path="/" element={<Home />} />  {/* Page d'accueil */}
+          <Route path="/faq" element={<Faq />} />  {/* Page FAQ */}
+          <Route path="/logement" element={<Logement />} />  {/* Page Logement */}
+          <Route path="*" element={<NotFound />} />  {/* Page 404 pour toute autre URL */}
+        </Routes>
+      <Footer />
     </>
   )
 }
