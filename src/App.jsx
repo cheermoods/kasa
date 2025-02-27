@@ -13,12 +13,13 @@ function App() {
   //
   // comportement 
   return (
+    
     <>
       <Header />
         <Routes>
           <Route path="/" element={<Home />} />  {/* Page d'accueil */}
           <Route path="/faq" element={<Faq />} />  {/* Page FAQ */}
-          <Route path="/logement" element={<Logement />} />  {/* Page Logement */}
+          <Route path="/logement/:id" element={<Logement />} />  {/* Page Logement */}
           <Route path="*" element={<NotFound />} />  {/* Page 404 pour toute autre URL */}
         </Routes>
       <Footer />

@@ -11,7 +11,7 @@ const Header = () => {
         {/* Menu */}
         <div className="home__links">
           <Link to="/">Accueil</Link>
-          <Link to="/about">À propos</Link>
+          <Link to="/faq">À propos</Link>
         </div>
       </nav>
     </header>

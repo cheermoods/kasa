@@ -43,7 +43,9 @@
 */
 
 .home {
-  padding: 20px;
+  max-width: 1200px;
+  margin: 0 20px;
+  padding: 0 20px;
   font-family: Arial, sans-serif;
 
   &__menu {
@@ -56,7 +58,7 @@
   }
 
   &__logo img {
-    height: 50px; /* Taille du logo */
+    height: 50px; 
   }
 
   &__links {
@@ -78,8 +80,6 @@
   &__banner {
     width: 100%;
     margin: 20px auto;
-    padding: 40px;
-    background: url("https://via.placeholder.com/1200x400") center/cover no-repeat; /* Image en ligne */
     text-align: center;
     font-size: 24px;
     font-weight: bold;
@@ -90,6 +90,31 @@
     justify-content: center;
     height: 200px;
     position: relative;
+    overflow: hidden;
+  }
+
+  &__banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: block;
+  }
+
+  &__banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    z-index: 1;
   }
 
   &__grid {
@@ -103,18 +128,134 @@
   }
 
   &__card {
+    position: relative;
+    background: #f3f3f3;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1; /* Carte carrée */
+    text-decoration: none;
+
+    &-content {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ajuste l'image pour couvrir toute la carte */
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+      color: white;
+      font-size: 1.2em;
+      text-align: center;
+      padding: 10px;
+      margin: 0;
+    }
+  }
+}
+
+.faq {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+
+  &__banner {
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #ffcccc; /* Rouge pâle */
-    color: white;
-    height: 150px;
-    border-radius: 10px;
-    text-decoration: none;
     position: relative;
     overflow: hidden;
+    z-index: 10;
 
+    .home__banner-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
 
+  &__questions {
+    margin-top: 20px;
+  }
+
+  &__question {
+    background-color: #ff6f61;  // Fond rouge saumon
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #ff4f42;  
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-title {
+      color: white;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    &-answer {
+      display: none;  
+      margin-top: 10px;
+      padding-left: 20px;
+      color: white;
+      font-size: 1rem;
+
+      &.show {
+        display: block; 
+      }
+    }
+  }
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+
+  &__title {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__message {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #646cff;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 }
 
@@ -131,5 +272,135 @@ footer {
   .footer__copyright {
     font-size: 14px;
     color: #ffffff;
+  }
+}
+
+.logement {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+  &__carousel {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-prev, &-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    &-prev {
+      left: 10px;
+    }
+
+    &-next {
+      right: 10px;
+    }
+
+    &-count {
+      position: absolute;
+      bottom: 10px;
+      right: 50%;
+      transform: translateX(50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  &__location {
+    font-size: 1.2rem;
+    color: gray;
+  }
+
+  &__host {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &-name {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    &-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__tags-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  &__tags {
+    display: flex;
+    gap: 10px;
+
+    .logement__tag {
+      background: #ff6f61;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    gap: 5px;
+    
+    .star {
+      font-size: 1.5rem;
+      color: lightgray;
+
+      &.filled {
+        color: #ff6f61;
+      }
+    }
+  }
+
+  &__collapses {
+    display: flex;
+    gap: 20px;
+
+    > div {
+      flex: 1;
+    }
   }
 }

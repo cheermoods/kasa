@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "question": "Quel est le but de ce site ?",
+      "answer": "Ce site permet aux utilisateurs de trouver des logements à louer ou à acheter, ainsi que d'obtenir des informations utiles sur les logements."
+    },
+    {
+      "id": 2,
+      "question": "Comment contacter le support ?",
+      "answer": "Vous pouvez nous contacter via le formulaire de contact situé en bas de la page ou directement par e-mail."
+    },
+    {
+      "id": 3,
+      "question": "Les logements sont-ils disponibles dans ma région ?",
+      "answer": "Oui, nous avons des logements disponibles dans plusieurs régions. Vous pouvez les consulter sur notre page d'accueil."
+    },
+    {
+      "id": 4,
+      "question": "Comment réserver un logement ?",
+      "answer": "Pour réserver un logement, il vous suffit de cliquer sur l'annonce qui vous intéresse et de suivre les instructions."
+    }
+]
+  
