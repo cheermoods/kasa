@@ -42,8 +42,11 @@
 }
 */
 
-.home {
+.home__menu.div, .home.div, .logement.div {
   max-width: 1200px;
+}
+
+.home {
   margin: 0 20px;
   padding: 0 20px;
   font-family: Arial, sans-serif;
@@ -115,16 +118,6 @@
     text-align: center;
     color: white;
     z-index: 1;
-  }
-
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    background: #f3f3f3;
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 20px;
   }
 
   &__card {
@@ -276,7 +269,6 @@ footer {
 }
 
 .logement {
-  max-width: 1200px;
   margin: auto;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -334,13 +326,15 @@ footer {
   }
 
   &__title {
+    color: #ff6f61;
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: lighter;
+    margin: 5px 0;
   }
 
   &__location {
-    font-size: 1.2rem;
-    color: gray;
+    font-size: 1rem;
+    margin: 5px 0;
   }
 
   &__host {
@@ -365,7 +359,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 0;
+    margin: -10px 0 10px 0;
   }
 
   &__tags {
@@ -395,12 +389,4 @@ footer {
     }
   }
 
-  &__collapses {
-    display: flex;
-    gap: 20px;
-
-    > div {
-      flex: 1;
-    }
-  }
 }

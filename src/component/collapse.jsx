@@ -1,40 +1,37 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
+import "../styles/collapse.scss"; // Import du CSS
 
-const Collapse = ({ id2, question, answer}) => {
-     // Gérer l'affichage des réponses avec du JavaScript simple
-    const handleAnswerClick = (id2) => {
-        const answer = document.getElementById(`answer-${id2}`);
-        if (answer.style.display === "none") {
-        answer.style.display = "block";  // Afficher la réponse
-        } else {
-        answer.style.display = "none";   // Masquer la réponse
-        }
-    };
-    return (
-        <div className="faq__question">
-            <div
-              className="faq__question-header"
-              onClick={() => handleAnswerClick(id2)} // Gère le clic pour afficher/masquer la réponse
-            >
-              <h3 className="faq__question-title">{question}</h3>
-            </div>
-            {/* La réponse est cachée par défaut */}
-            <div id={`answer-${id2}`} className="faq__answer">
-              <p>{answer}</p>
-            </div>
-        </div>
-    )
+const Collapse = ({ id2, question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Fonction qui gère l'affichage
+  const handleClick = () => {
+    setIsOpen(!isOpen);
   };
 
-// 📌 Définition des PropTypes pour éviter l'erreur
+  return (
+    <div className="faq__question">
+      {/* Question cliquable */}
+      <div className="faq__question-header" onClick={handleClick}>
+        <h3 className="faq__question-title">{question}</h3>
+        {/* Petite flèche qui tourne */}
+        <span className={`faq__arrow ${isOpen ? "up" : "down"}`}>▼</span>
+      </div>
+
+      {/* Réponse affichée seulement si isOpen est vrai */}
+      <div id={`answer-${id2}`} className="faq__answer" style={{ display: isOpen ? "block" : "none" }}>
+        <p>{answer}</p>
+      </div>
+    </div>
+  );
+};
+
+// Vérification des props
 Collapse.propTypes = {
-  id2: PropTypes.number.isRequired,
+  id2: PropTypes.string.isRequired,
   question: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
 };
-  
+
 export default Collapse;
-
-
-
-        

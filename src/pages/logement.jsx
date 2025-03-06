@@ -90,8 +90,8 @@ const Logement = () => {
 
       {/* Description et équipements */}
       <div className="logement__collapses">
-        <Collapse id="desc" question="Description" answer={logement.description} />
-        <Collapse id="equip" question="Équipements" answer={logement.equipments.join(", ")} />
+        <Collapse id2="desc" question="Description" answer={logement.description} />
+        <Collapse id2="equip" question="Équipements" answer={logement.equipments.join(", ")} />
       </div>
     </div>
   );
